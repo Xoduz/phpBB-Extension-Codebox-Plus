@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * ----------
  * Author: Thomas Linder Puls (puls@pdc.dk)
  * Copyright: (c) 2008 Thomas Linder Puls (puls@pdc.dk)
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2008/11/20
  *
  * Visual Prolog language file for GeSHi.

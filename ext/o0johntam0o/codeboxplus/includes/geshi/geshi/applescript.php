@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * --------
  * Author: Stephan Klimek (http://www.initware.org)
  * Copyright: Stephan Klimek (http://www.initware.org)
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2005/07/20
  *
  * AppleScript language file for GeSHi.

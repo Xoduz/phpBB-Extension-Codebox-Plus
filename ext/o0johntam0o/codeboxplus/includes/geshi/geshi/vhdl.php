@@ -14,7 +14,7 @@ if (!defined('IN_PHPBB'))
  * Contributors:
  *  - Kevin Thibedeau (kevinpt@yahoo.com)
  * Copyright: (c) 2005 Alexander Krause
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2005/06/15
  *
  * VHDL (VHSICADL, very high speed integrated circuit HDL) language file for GeSHi.

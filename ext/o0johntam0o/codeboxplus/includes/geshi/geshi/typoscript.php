@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * --------
  * Author: Jan-Philipp Halle (typo3@jphalle.de)
  * Copyright: (c) 2005 Jan-Philipp Halle (http://www.jphalle.de/)
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2005/07/29
  *
  * TypoScript language file for GeSHi.
@@ -228,7 +228,7 @@ $language_data = array (
     'REGEXPS' => array(
             // xhtml tag
         2 => array(
-            GESHI_SEARCH => '(&lt;)([a-zA-Z\\/][^\\/\\|]*?)(&gt;)',
+            GESHI_SEARCH => '(&lt;)([a-zA-Z\\/][^\\/\\\x7C]*?)(&gt;)',
             GESHI_REPLACE => '\\2',
             GESHI_MODIFIERS => 's',
             GESHI_BEFORE => '\\1',
@@ -302,7 +302,7 @@ $language_data = array (
     'SCRIPT_DELIMITERS' => array(
         ),
     'HIGHLIGHT_STRICT_BLOCK' => array(
-        ),
+        )
 );
 
 ?>

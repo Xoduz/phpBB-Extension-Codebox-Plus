@@ -14,7 +14,7 @@ if (!defined('IN_PHPBB'))
  *         John Liao (colorhook@gmail.com)
  * Copyright: (c) 2012 onthewings (http://www.onthewings.net/)
  *                2010 colorhook (http://colorhook.com/)
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2010/10/05
  *
  * Haxe language file for GeSHi.
@@ -118,7 +118,6 @@ $language_data = array (
         'COMMENTS' => array(
             1 => 'color: #666666; font-style: italic;',
             2 => 'color: #006699;',
-            3 => 'color: #008000; font-style: italic; font-weight: bold;',
             3 => 'color: #008000; font-style: italic; font-weight: bold;',
             'MULTI' => 'color: #666666; font-style: italic;',
             ),

@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * --------
  * Author: Bananeweizen (Bananeweizen@gmx.de)
  * Copyright: (c) 2005 Bananeweizen (www.bananeweizen.de)
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2005/03/27
  *
  * Smalltalk language file for GeSHi.

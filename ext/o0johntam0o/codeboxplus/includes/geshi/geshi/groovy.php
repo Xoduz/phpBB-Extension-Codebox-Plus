@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * ----------
  * Author: Ivan F. Villanueva B. (geshi_groovy@artificialidea.com)
  * Copyright: (c) 2006 Ivan F. Villanueva B.(http://www.artificialidea.com)
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2006/04/29
  *
  * Groovy language file for GeSHi.

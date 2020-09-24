@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * --------
  * Author: Moises Deniz
  * Copyright: (c) 2007 Moises Deniz
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2007/03/21
  *
  * Ruby language file for GeSHi.

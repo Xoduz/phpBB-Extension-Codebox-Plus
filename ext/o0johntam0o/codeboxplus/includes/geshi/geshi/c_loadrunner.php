@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * ---------------------------------
  * Author: Stuart Moncrieff (stuart at myloadtest dot com)
  * Copyright: (c) 2010 Stuart Moncrieff (http://www.myloadtest.com/loadrunner-syntax-highlighter/)
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2010-07-25
  *
  * C (for LoadRunner) language file for GeSHi.

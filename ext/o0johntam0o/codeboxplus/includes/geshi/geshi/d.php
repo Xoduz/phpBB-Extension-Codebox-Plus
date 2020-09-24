@@ -14,7 +14,7 @@ if (!defined('IN_PHPBB'))
  * Contributors:
  *  - Jimmy Cao
  * Copyright: (c) 2005 Thomas Kuehne (http://thomas.kuehne.cn/)
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2005/04/22
  *
  * D language file for GeSHi.

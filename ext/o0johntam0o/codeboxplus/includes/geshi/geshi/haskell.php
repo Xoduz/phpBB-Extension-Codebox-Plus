@@ -10,20 +10,14 @@ if (!defined('IN_PHPBB'))
 /*************************************************************************************
  * haskell.php
  * ----------
- * Author: Jason Dagit (dagit@codersbase.com) based on ocaml.php by Flaie (fireflaie@gmail.com)
+ * Author: Daniel Mlot (duplode_1 at yahoo dot com dot br)
+ *         Based on haskell.php by Jason Dagit (dagit@codersbase.com), which was
+ *         based on ocaml.php by Flaie (fireflaie@gmail.com).
  * Copyright: (c) 2005 Flaie, Nigel McNie (http://qbnz.com/highlighter)
- * Release Version: 1.0.8.11
- * Date Started: 2005/08/27
+ * Release Version: 1.0.9.1
+ * Date Started: 2014/05/12
  *
  * Haskell language file for GeSHi.
- *
- * CHANGES
- * -------
- * 2005/08/27 (1.0.0)
- *   -  First Release
- *
- * TODO (updated 2005/08/27)
- * -------------------------
  *
  *************************************************************************************
  *
@@ -54,7 +48,7 @@ $language_data = array (
         3 => "/{-(?:(?R)|.)-}/s", //Nested Comments
         ),
     'CASE_KEYWORDS' => 0,
-    'QUOTEMARKS' => array('"',"'"),
+    'QUOTEMARKS' => array('"'),
     'ESCAPE_CHAR' => '\\',
     'KEYWORDS' => array(
         /* main haskell keywords */
@@ -66,7 +60,7 @@ $language_data = array (
             'instance', 'let', 'in', 'module', 'newtype',
             'qualified', 'type', 'where'
             ),
-        /* define names of main librarys, so we can link to it */
+        /* define names of main libraries, so we can link to it */
         2 => array(
             'Foreign', 'Numeric', 'Prelude'
             ),
@@ -115,35 +109,36 @@ $language_data = array (
             'interact', 'readFile', 'writeFile', 'appendFile',
             'readIO', 'readLn', 'ioError', 'userError', 'catch'
             ),
-        /* here Prelude Types */
+        /* Prelude types */
         4 => array (
-            'Bool', 'Maybe', 'Either', 'Ord', 'Ordering',
-            'Char', 'String', 'Eq', 'Enum', 'Bounded',
-            'Int', 'Integer', 'Float', 'Double', 'Rational',
-            'Num', 'Real', 'Integral', 'Fractional',
-            'Floating', 'RealFrac', 'RealFloat', 'Monad',
-            'Functor', 'Show', 'ShowS', 'Read', 'ReadS',
-            'IO'
+            'Bool', 'Maybe', 'Either', 'Ordering',
+            'Char', 'String',
+            'Int', 'Integer', 'Float', 'Double', 'Rational', 'Word',
+            'ShowS', 'ReadS',
+            'IO', 'IOError', 'IOException'
             ),
-        /* finally Prelude Exceptions */
+        /* Prelude classes */
         5 => array (
-            'IOError', 'IOException'
+            'Ord', 'Eq', 'Enum', 'Bounded',
+            'Num', 'Real', 'Integral', 'Fractional',
+            'Floating', 'RealFrac', 'RealFloat',
+            'Semigroup', 'Monoid',
+            'Monad', 'Applicative', 'Functor',
+            'Foldable', 'Traversable',
+            'Show', 'Read'
             )
         ),
-    /* highlighting symbols is really important in Haskell */
+    /* Most symbol combinations can be valid Haskell operators */
     'SYMBOLS' => array(
-        '|', '->', '<-', '@', '!', '::', '_', '~', '=', '?',
-        '&&', '||', '==', '/=', '<', '<=', '>',
-        '>=','+', '-', '*','/', '%', '**', '^', '^^',
-        '>>=', '>>', '=<<',  '$', '.', ',', '$!',
-        '++', '!!'
+        '!', '@', '#', '$', '%', '&', '*', '-', '+', '=',
+        '^', '~', '|', '\\', '>', '<', ':', '?', '/'
         ),
     'CASE_SENSITIVE' => array(
         GESHI_COMMENTS => false,
-        1 => true,
-        2 => true, /* functions name are case seinsitive */
-        3 => true, /* types name too */
-        4 => true, /* finally exceptions too */
+        1 => true, /* Haskell is a case sensitive language */
+        2 => true,
+        3 => true,
+        4 => true,
         5 => true
         ),
     'STYLES' => array(
@@ -152,7 +147,7 @@ $language_data = array (
             2 => 'color: #06c; font-weight: bold;', /* blue as well */
             3 => 'font-weight: bold;', /* make the preduled functions bold */
             4 => 'color: #cccc00; font-weight: bold;', /* give types a different bg */
-            5 => 'color: maroon;'
+            5 => 'color: maroon; font-weight: bold;' /* similarly for classes */
             ),
         'COMMENTS' => array(
             1 => 'color: #5d478b; font-style: italic;',
@@ -167,7 +162,7 @@ $language_data = array (
             0 => 'color: green;'
             ),
         'STRINGS' => array(
-            0 => 'background-color: #3cb371;' /* nice green */
+            0 => 'color: #3cb371;' /* nice green */
             ),
         'NUMBERS' => array(
             0 => 'color: red;' /* pink */
@@ -187,13 +182,13 @@ $language_data = array (
         /* some of keywords are Prelude functions */
         1 => '',
         /* link to the wanted library */
-        2 => 'http://haskell.org/ghc/docs/latest/html/libraries/base/{FNAME}.html',
+        2 => 'http://hackage.haskell.org/package/base/docs/{FNAME}.html',
         /* link to Prelude functions */
-        3 => 'http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#v:{FNAME}',
+        3 => 'http://hackage.haskell.org/package/base/docs/Prelude.html#v:{FNAME}',
         /* link to Prelude types */
-        4 => 'http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#t:{FNAME}',
+        4 => 'http://hackage.haskell.org/package/base/docs/Prelude.html#t:{FNAME}',
         /* link to Prelude exceptions */
-        5 => 'http://haskell.org/ghc/docs/latest/html/libraries/base/Prelude.html#t:{FNAME}',
+        5 => 'http://hackage.haskell.org/package/base/docs/Prelude.html#t:{FNAME}'
         ),
     'OOLANG' => false,
     'OBJECT_SPLITTERS' => array(

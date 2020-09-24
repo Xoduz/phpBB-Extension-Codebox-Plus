@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * ------
  * Author: Eros Olmi (eros.olmi@thinbasic.com)
  * Copyright: (c) 2006 Eros Olmi (http://www.thinbasic.com), Nigel McNie (http://qbnz.com/highlighter)
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2006/05/12
  *
  * thinBasic language file for GeSHi.

@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * -----------
  * Author: Benjamin Kowarsch (benjamin@modula2.net)
  * Copyright: (c) 2009 Benjamin Kowarsch (benjamin@modula2.net)
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2009/11/05
  *
  * Modula-2 language file for GeSHi.

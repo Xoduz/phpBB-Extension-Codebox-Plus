@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * --------
  * Author: Randy Hollines (objeck@gmail.com)
  * Copyright: (c) 2010 Randy Hollines (http://code.google.com/p/objeck-lang/)
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2010/07/01
  *
  * Objeck Programming Language language file for GeSHi.

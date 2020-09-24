@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * ----------
  * Author: Nicolas Joseph (nicolas.joseph@valaide.org)
  * Copyright: (c) 2009 Nicolas Joseph
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2009/04/29
  *
  * Genie language file for GeSHi.
@@ -158,8 +158,8 @@ $language_data = array (
         'KEYWORDS' => array(
             'DISALLOWED_BEFORE' => "(?<![a-zA-Z0-9\$_\|\#>|^])",
             'DISALLOWED_AFTER' => "(?![a-zA-Z0-9_<\|%\\-])"
+            )
         )
-    )
 );
 
 ?>

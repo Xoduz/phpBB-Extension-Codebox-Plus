@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * -------
  * Author: Juro Bystricky (juro@f1compiler.com)
  * Copyright: K2 Software Corp.
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2010/07/06
  *
  * Formula One language file for GeSHi.

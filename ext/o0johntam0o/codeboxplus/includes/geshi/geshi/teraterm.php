@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * --------
  * Author: Boris Maisuradze (boris at logmett.com)
  * Copyright: (c) 2008 Boris Maisuradze (http://logmett.com)
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2008/09/26
  *
  * Tera Term Macro language file for GeSHi.

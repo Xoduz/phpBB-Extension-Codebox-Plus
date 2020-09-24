@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * ----------
  * Author: Zoran Simic (zsimic@axarosenberg.com)
  * Copyright: (c) 2005 Zoran Simic
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2005/06/30
  *
  * Eiffel language file for GeSHi.

@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * --------
  * Author: Sjoerd van Leent (svanleent@gmail.com)
  * Copyright: (c) 2010 Sjoerd van Leent
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2010/02/15
  *
  * MagikSF language file for GeSHi.
@@ -59,7 +59,7 @@ $language_data = array (
     //Multiline-continued single-line comments
     'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
     'QUOTEMARKS' => array("'", '"'),
-    'ESCAPE_CHAR' => '',
+    'ESCAPE_CHAR' => '', // FIXME: Duplicate array key. null or ''?
     'KEYWORDS' => array(
         1 => array(
             '_block', '_endblock', '_proc', '_endproc', '_loop', '_endloop',

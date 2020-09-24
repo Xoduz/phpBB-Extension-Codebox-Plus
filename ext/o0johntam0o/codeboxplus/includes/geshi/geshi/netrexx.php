@@ -14,7 +14,7 @@ if (!defined('IN_PHPBB'))
  * Contributors:
  *    - Walter Pachl (pachl@chello.at)
  * Copyright: (c) 2008 Jon Wolfers, (c) 2012 Walter Pachl
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2008/01/07
  *
  * NetRexx language file for GeSHi.

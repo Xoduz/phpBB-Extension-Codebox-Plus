@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * --------
  * Author: Petr Hendl (petr@hendl.cz)
  * Copyright: (c) 2011 Petr Hendl http://hendl.cz/geshi/
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2011/02/17
  *
  * DCL language file for GeSHi.

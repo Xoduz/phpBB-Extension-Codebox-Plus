@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * --------
  * Author: Neil Bird <phoenix@fnxweb.com>
  * Copyright: (c) 2008 Neil Bird
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2008/08/26
  *
  * make language file for GeSHi.
@@ -154,6 +154,5 @@ $language_data = array (
     'SCRIPT_DELIMITERS' => array(),
     'HIGHLIGHT_STRICT_BLOCK' => array(),
     'TAB_WIDTH' => 8
-// vim: set sw=4 sts=4 :
 );
 ?>

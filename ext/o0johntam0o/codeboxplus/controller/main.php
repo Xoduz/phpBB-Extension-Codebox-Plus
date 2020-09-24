@@ -31,7 +31,7 @@ class main
 	protected $root_path;
 	/** @var string */
 	protected $php_ext;
-	
+
 	protected $enable_download;
 	protected $enable_login_required;
 	protected $enable_prevent_bots;
@@ -50,10 +50,10 @@ class main
 		$this->captcha = $captcha;
 		$this->root_path = $root_path;
 		$this->php_ext = $php_ext;
-		
+
 		$this->user->session_begin();
 		$this->auth->acl($this->user->data);
-		
+
 		$this->enable_download = isset($this->config['codebox_plus_download']) ? $this->config['codebox_plus_download'] : 0;
 		$this->enable_login_required = isset($this->config['codebox_plus_login_required']) ? $this->config['codebox_plus_login_required'] : 0;
 		$this->enable_prevent_bots = isset($this->config['codebox_plus_prevent_bots']) ? $this->config['codebox_plus_prevent_bots'] : 0;
@@ -65,7 +65,7 @@ class main
 	{
 		return $this->helper->render('codebox_plus.html', $this->user->lang['CODEBOX_PLUS_DOWNLOAD']);
 	}
-	
+
 	/**
 	*  @param		$id			post_id
 	*  @param		$part		Code part
@@ -91,7 +91,7 @@ class main
 		$result = $this->db->sql_query($sql);
 		$row = $this->db->sql_fetchrow($result);
 		$this->db->sql_freeresult($result);
-		
+
 		if (!$this->auth->acl_get('f_read', $row['forum_id']))
 		{
 			$this->template->assign_var('S_CODEBOX_PLUS_ERROR', $this->user->lang['CODEBOX_PLUS_ERROR_NO_PERMISSION']);
@@ -103,14 +103,14 @@ class main
 		{
 			login_box($this->helper->route('o0johntam0o_codeboxplus_download_controller', array('id' => $id, 'part' => $part)), $this->user->lang['CODEBOX_PLUS_ERROR_LOGIN_REQUIRED']);
 		}
-		
+
 		// Captcha
 		if ($this->enable_captcha)
 		{
 			$tmp_captcha = $this->captcha->get_instance($this->config['captcha_plugin']);
 			$tmp_captcha->init(CONFIRM_LOGIN);
 			$ok = false;
-			
+
 			if ($this->request->is_set_post('submit'))
 			{
 				$tmp_captcha->validate();
@@ -120,7 +120,7 @@ class main
 					$ok = true;
 				}
 			}
-			
+
 			// If the form was not submitted yet or the CAPTCHA was not solved
 			if (!$ok)
 			{
@@ -131,7 +131,7 @@ class main
 
 					return $this->helper->render('codebox_plus.html', $this->user->lang['CODEBOX_PLUS_DOWNLOAD']);
 				}
-				
+
 				$this->template->assign_vars(array(
 					'S_CODE_DOWNLOADER_ACTION'		=> $this->helper->route('o0johntam0o_codeboxplus_download_controller', array('id' => $id, 'part' => $part)),
 					'S_CONFIRM_CODE'                => true,
@@ -156,7 +156,7 @@ class main
 			return $this->helper->render('codebox_plus.html', $this->user->lang['CODEBOX_PLUS_DOWNLOAD']);
 		}
 	}
-	
+
 	/**
 	*  @param		$id			post_id
 	*  @param		$part		Code part
@@ -197,17 +197,17 @@ class main
 		//- Process post data
 		// Collect code
 		preg_match_all("#\[codebox=[a-z0-9_-]+ file=(.*?):" . $post_data['bbcode_uid'] . "\](.*?)\[/codebox:" . $post_data['bbcode_uid'] . "\]#msi", $post_data['post_text'], $code_data);
-		
+
 		if (sizeof($code_data[2]) >= $part)
 		{
 			$part--;
 			$code = $code_data[2][$part];
-			
+
 			if ($code != '')
 			{
 				// Decode some special characters
 				$code = $this->codebox_decode_code($code);
-				
+
 				if ($code_data[1][$part] != '')
 				{
 					$filename = $code_data[1][$part];
@@ -234,7 +234,7 @@ class main
 		header('Expires: ' . gmdate('D, d M Y H:i:s') . ' GMT');
 		header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
 		header('Pragma: public');
-		
+
 		$this->template->assign_vars(array(
 			'S_CODEBOX_PLUS_DOWNLOAD_INFO'				=> true,
 			'S_CODEBOX_PLUS_DOWNLOAD_INFO_CONTENT'		=> $code,
@@ -242,7 +242,7 @@ class main
 
 		return true;
 	}
-	
+
 	// From main_listener.php
 	private function codebox_decode_code($code = '')
 	{
@@ -250,11 +250,11 @@ class main
 		{
 			return $code;
 		}
-		
+
 		$str_from = array('&lt;', '&gt;', '&#91;', '&#93;', '&#40;', '&#41;', '&#46;', '&#58;', '&#058;', '&#39;', '&#039;', '&quot;', '&amp;');
 		$str_to = array('<', '>', '[', ']', '(', ')', '.', ':', ':', "'", "'", '"', '&');
 		$code = str_replace($str_from, $str_to, $code);
-		
+
 		return $code;
 	}
 }

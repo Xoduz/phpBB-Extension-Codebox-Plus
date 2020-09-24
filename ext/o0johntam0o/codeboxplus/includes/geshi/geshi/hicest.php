@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * --------
  * Author: Georg Petrich (spt@hicest.com)
  * Copyright: (c) 2010 Georg Petrich (http://www.HicEst.com)
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2010/03/15
  *
  * HicEst language file for GeSHi.

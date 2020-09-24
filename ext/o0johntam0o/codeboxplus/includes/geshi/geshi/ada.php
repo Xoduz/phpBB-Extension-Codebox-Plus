@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * -------
  * Author: Tux (tux@inmail.cz)
  * Copyright: (c) 2004 Tux (http://tux.a4.cz/), Nigel McNie (http://qbnz.com/highlighter)
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2004/07/29
  *
  * Ada language file for GeSHi.
@@ -101,9 +101,6 @@ $language_data = array (
             ),
         'ESCAPE_CHAR' => array(
             0 => 'color: #000099; font-weight: bold;'
-            ),
-        'BRACKETS' => array(
-            0 => 'color: #66cc66;'
             ),
         'STRINGS' => array(
             0 => 'color: #7f007f;'

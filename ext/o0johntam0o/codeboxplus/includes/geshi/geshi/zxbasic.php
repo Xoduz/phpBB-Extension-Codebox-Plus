@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * -------------
  * Author: Jose Rodriguez (a.k.a. Boriel)
  * Based on Copyright: (c) 2005 Roberto Rossi (http://rsoftware.altervista.org) Freebasic template
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2010/06/19
  *
  * ZXBasic language file for GeSHi.

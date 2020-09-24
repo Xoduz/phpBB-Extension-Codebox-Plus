@@ -2,7 +2,17 @@
 <div id="core-bbcode-buttons">
 	<select class="gensmall bbcode-size" name="addbbcode_codeboxplus" onchange="bbfontstyle('[Codebox=' + this.form.addbbcode_codeboxplus.options[this.form.addbbcode_codeboxplus.selectedIndex].value + ' file={L_CODEBOX_PLUS_DEFAULT_FILENAME}.' + this.form.addbbcode_codeboxplus.options[this.form.addbbcode_codeboxplus.selectedIndex].className.substring(9) + ']', '[/Codebox]');this.form.addbbcode_codeboxplus.selectedIndex = 0;" title="{L_CODEBOX_PLUS_SELECT}">
 		<option value="0" selected="selected" style="display: none">{L_CODEBOX_PLUS_SELECT}</option>
+
+		<option value="javascript" class="code_etx_js" title="{L_CODEBOX_PLUS_SYNTAX_JAVASCRIPT_EXPLAIN}">{L_CODEBOX_PLUS_SYNTAX_JAVASCRIPT}</option>
+		<option value="uox3dfn" class="code_etx_uox3dfn" title="{L_CODEBOX_PLUS_SYNTAX_UOX3DFN_EXPLAIN}">{L_CODEBOX_PLUS_SYNTAX_UOX3DFN}</option>
+		<option value="cpp" class="code_etx_cpp" title="{L_CODEBOX_PLUS_SYNTAX_CPP_EXPLAIN}">{L_CODEBOX_PLUS_SYNTAX_CPP}</option>
+		<option value="c" class="code_etx_c" title="{L_CODEBOX_PLUS_SYNTAX_C_EXPLAIN}">{L_CODEBOX_PLUS_SYNTAX_C}</option>
 		<option value="text" class="code_etx_txt" title="{L_CODEBOX_PLUS_SYNTAX_TEXT_EXPLAIN}">{L_CODEBOX_PLUS_SYNTAX_TEXT}</option>
+		<option value="cmake" class="code_etx_cmake" title="{L_CODEBOX_PLUS_SYNTAX_CMAKE_EXPLAIN}">{L_CODEBOX_PLUS_SYNTAX_CMAKE}</option>
+		<option value="make" class="code_etx_make" title="{L_CODEBOX_PLUS_SYNTAX_MAKE_EXPLAIN}">{L_CODEBOX_PLUS_SYNTAX_MAKE}</option>
+		<option value="bash" class="code_etx_bsh" title="{L_CODEBOX_PLUS_SYNTAX_BASH_EXPLAIN}">{L_CODEBOX_PLUS_SYNTAX_BASH}</option>
+
+		<!-- <option value="text" class="code_etx_txt" title="{L_CODEBOX_PLUS_SYNTAX_TEXT_EXPLAIN}">{L_CODEBOX_PLUS_SYNTAX_TEXT}</option>
 		<option value="robots" class="code_etx_txt" title="{L_CODEBOX_PLUS_SYNTAX_ROBOTS_EXPLAIN}">{L_CODEBOX_PLUS_SYNTAX_ROBOTS}</option>
 		<option value="asm" class="code_etx_asm" title="{L_CODEBOX_PLUS_SYNTAX_ASM_EXPLAIN}">{L_CODEBOX_PLUS_SYNTAX_ASM}</option>
 		<option value="asp" class="code_etx_asp" title="{L_CODEBOX_PLUS_SYNTAX_ASP_EXPLAIN}">{L_CODEBOX_PLUS_SYNTAX_ASP}</option>
@@ -231,7 +241,7 @@
 		<option value="xorg_conf" class="code_etx_txt" title="{L_CODEBOX_PLUS_SYNTAX_XORG_CONF_EXPLAIN}">{L_CODEBOX_PLUS_SYNTAX_XORG_CONF}</option>
 		<option value="xpp" class="code_etx_txt" title="{L_CODEBOX_PLUS_SYNTAX_XPP_EXPLAIN}">{L_CODEBOX_PLUS_SYNTAX_XPP}</option>
 		<option value="z80" class="code_etx_txt" title="{L_CODEBOX_PLUS_SYNTAX_Z80_EXPLAIN}">{L_CODEBOX_PLUS_SYNTAX_Z80}</option>
-		<option value="zxbasic" class="code_etx_txt" title="{L_CODEBOX_PLUS_SYNTAX_ZXBASIC_EXPLAIN}">{L_CODEBOX_PLUS_SYNTAX_ZXBASIC}</option>
+		<option value="zxbasic" class="code_etx_txt" title="{L_CODEBOX_PLUS_SYNTAX_ZXBASIC_EXPLAIN}">{L_CODEBOX_PLUS_SYNTAX_ZXBASIC}</option> -->
 	</select>
 </div>
 <!-- ENDIF -->

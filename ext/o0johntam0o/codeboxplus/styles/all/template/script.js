@@ -8,8 +8,12 @@ function codebox_plus_toggle(a, tmp)
 	{
 		var e = a.parentNode.parentNode.getElementsByTagName('dd')[0];
 	}
-	
+
 	if (e.style.display == 'none')
+	{
+		e.style.display = 'block';
+	}
+	else if( e.style.display == 'block' )
 	{
 		e.style.display = 'inline';
 	}
@@ -37,7 +41,7 @@ function codebox_plus_select(a, tmp)
 		// Safari
 		if (s.setBaseAndExtent)
 		{
-			s.setBaseAndExtent(e, 0, e, e.innerText.length - 1);
+			s.selectAllChildren(e);
 		}
 		// Firefox and Opera
 		else

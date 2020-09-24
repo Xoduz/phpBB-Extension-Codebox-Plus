@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * ----------
  * Author: Tux (tux@inamil.cz)
  * Copyright: (c) 2004 Tux (http://tux.a4.cz/), Nigel McNie (http://qbnz.com/highlighter)
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2004/07/26
  *
  * Pascal language file for GeSHi.

@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * ----------
  * Author: Trevor Burnham (trevorburnham@gmail.com)
  * Copyright: (c) 2010 Trevor Burnham (http://iterative.ly)
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2010/06/08
  *
  * CoffeeScript language file for GeSHi.

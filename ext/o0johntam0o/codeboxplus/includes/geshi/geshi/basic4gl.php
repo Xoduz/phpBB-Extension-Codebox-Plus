@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * ---------------------------------
  * Author: Matthew Webb (bmatthew1@blueyonder.co.uk)
  * Copyright: (c) 2004 Matthew Webb (http://matthew-4gl.wikispaces.com)
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2007/09/15
  *
  * Basic4GL language file for GeSHi.

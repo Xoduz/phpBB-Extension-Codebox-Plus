@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * --------
  * Author: Lecanu Guillaume (Guillaume@LyA.fr)
  * Copyright: (c) 2004-2005 Lecanu Guillaume (Guillaume@LyA.fr)
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2004/12/22
  *
  * Rebol language file for GeSHi.

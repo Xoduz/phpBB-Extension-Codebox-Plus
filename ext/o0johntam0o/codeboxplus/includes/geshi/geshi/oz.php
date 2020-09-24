@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * --------
  * Author: Wolfgang Meyer (Wolfgang.Meyer@gmx.net)
  * Copyright: (c) 2010 Wolfgang Meyer
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2010/01/03
  *
  * Oz language file for GeSHi.

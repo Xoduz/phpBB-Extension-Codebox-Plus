@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * ---------
  * Author: Moises Deniz
  * Copyright: (c) 2005 Moises Deniz
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2007/03/21
  *
  * Ruby (with Ruby on Rails Framework) language file for GeSHi.
@@ -407,7 +407,7 @@ $language_data = array (
             )
         ),
     'HIGHLIGHT_STRICT_BLOCK' => array(
-        0 => true,
+        0 => true
         )
 );
 

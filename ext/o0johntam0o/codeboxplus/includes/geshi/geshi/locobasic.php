@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * -------------
  * Author: Nacho Cabanes
  * Copyright: (c) 2009 Nacho Cabanes (http://www.nachocabanes.com)
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2009/03/22
  *
  * Locomotive Basic (Amstrad CPC series) language file for GeSHi.

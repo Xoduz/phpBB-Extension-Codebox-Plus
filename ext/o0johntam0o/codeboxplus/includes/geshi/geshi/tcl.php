@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * ---------------------------------
  * Author: Reid van Melle (rvanmelle@gmail.com)
  * Copyright: (c) 2004 Reid van Melle (sorry@nowhere)
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2006/05/05
  *
  * TCL/iTCL language file for GeSHi.
@@ -58,14 +58,14 @@ if (!defined('IN_PHPBB'))
 
 $language_data = array (
     'LANG_NAME' => 'TCL',
-    'COMMENT_SINGLE' => array(1 => '#'),
+    'COMMENT_SINGLE' => array(),
     'COMMENT_MULTI' => array(),
     'COMMENT_REGEXP' => array(
-        1 => '/(?<!\\\\)#(?:\\\\\\\\|\\\\\\n|.)*$/m',
+        1 => '/(?:^|(?<=\{|;))\s*#(?:\\\\\\\\|\\\\\\n|.)*$/m',
         //2 => '/{[^}\n]+}/'
         ),
     'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array('"', "'"),
+    'QUOTEMARKS' => array('"'),
     'ESCAPE_CHAR' => '\\',
     'KEYWORDS' => array(
         /*
@@ -195,8 +195,8 @@ $language_data = array (
     'PARSER_CONTROL' => array(
         'COMMENTS' => array(
             'DISALLOWED_BEFORE' => '\\'
+            )
         )
-    )
 );
 
 ?>

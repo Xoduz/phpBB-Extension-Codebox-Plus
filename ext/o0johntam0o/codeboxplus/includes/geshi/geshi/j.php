@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * --------
  * Author: Ric Sherlock (tikkanz@gmail.com)
  * Copyright: (c) 2009 Ric Sherlock
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2009/11/10
  *
  * J language file for GeSHi.

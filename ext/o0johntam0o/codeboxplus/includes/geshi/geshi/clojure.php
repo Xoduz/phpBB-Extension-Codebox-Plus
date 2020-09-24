@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * --------
  * Author: Jess Johnson (jess@grok-code.com)
  * Copyright: (c) 2009 Jess Johnson (http://grok-code.com)
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2009/09/20
  *
  * Clojure language file for GeSHi.

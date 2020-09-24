@@ -29,7 +29,7 @@ class main_listener implements EventSubscriberInterface
 	protected $root_path;
 	/** @var string */
 	protected $php_ext;
-	
+
 	protected $syntax_highlighting_enabled;
 	protected $expanded;
 	protected $download_enabled;
@@ -37,7 +37,7 @@ class main_listener implements EventSubscriberInterface
 	protected $find_code;
 	protected $find_lang;
 	protected $find_file;
-	
+
 	public function __construct(\phpbb\controller\helper $helper, \phpbb\template\template $template, \phpbb\user $user, \phpbb\config\config $config, $root_path, $php_ext)
 	{
 		$this->helper = $helper;
@@ -46,12 +46,12 @@ class main_listener implements EventSubscriberInterface
 		$this->config = $config;
 		$this->root_path = $root_path;
 		$this->php_ext = $php_ext;
-		
+
 		$this->syntax_highlighting_enabled = isset($this->config['codebox_plus_syntax_highlighting']) ? $this->config['codebox_plus_syntax_highlighting'] : 0;
 		$this->expanded = isset($this->config['codebox_plus_expanded']) ? $this->config['codebox_plus_expanded'] : 0;
 		$this->download_enabled = isset($this->config['codebox_plus_download']) ? $this->config['codebox_plus_download'] : 0;
 	}
-	
+
 	static public function getSubscribedEvents()
     {
         return array(
@@ -63,7 +63,7 @@ class main_listener implements EventSubscriberInterface
             'core.modify_text_for_display_after'		=> 'message_parser_event',
         );
     }
-	
+
     public function load_language_on_setup($event)
     {
         $lang_set_ext = $event['lang_set_ext'];
@@ -72,7 +72,7 @@ class main_listener implements EventSubscriberInterface
             'lang_set' => 'codebox_plus',
         );
         $event['lang_set_ext'] = $lang_set_ext;
-		
+
 		if ($this->download_enabled)
 		{
 			$this->template->assign_vars(array(
@@ -80,7 +80,7 @@ class main_listener implements EventSubscriberInterface
 			));
 		}
     }
-	
+
 	/*
 	* Event: core.modify_format_display_text_after (message_parser.php)
 	* Use: $this->codebox_template()
@@ -96,14 +96,14 @@ class main_listener implements EventSubscriberInterface
 			$text = preg_replace_callback('#<div class="codebox" title="' . preg_quote($this->user->lang['CODEBOX_PLUS_TITLE']) . '" data-language="(.*?)" data-filename="(.*?)"><p>.*?</p><code>(.*?)</code></div>#msi',
 						function ($arg) use ($post_id, &$part)
 						{
-							return $this->codebox_template(preg_replace('#\<br\\s*/?\>#msi', "\n", $arg[3]), $arg[1], $arg[2], $post_id, ++$part);
+							return $this->codebox_template(preg_replace('#\<br\\s*/?\>#msi', "", $arg[3]), $arg[1], $arg[2], $post_id, ++$part);
 						},
 						$text);
 			//$text = preg_replace('#<div class="codebox" title="' . preg_quote($this->user->lang['CODEBOX_PLUS_TITLE']) . '" data-language="(.*?)" data-filename="(.*?)"><p>.*?</p><code>(.*?)</code></div>#msie', "\$this->codebox_template(preg_replace('#\<br\\s*/?\>#msi', '\n', '\$3'), '\$1', '\$2', \$post_id, ++\$part)", $text);
 			$event['text'] = $text;
 		}
     }
-	
+
 	/*
 	* Event: core.posting_modify_template_vars (posting.php)
 	* Remove extra space before '[/code]'
@@ -115,19 +115,19 @@ class main_listener implements EventSubscriberInterface
 			$page_data = $event['page_data'];
 			$message = $page_data['MESSAGE'];
 			$message = str_replace(' [/code]', '[/code]', $message);
-			
+
 			if (isset($page_data['MESSAGE']))
 			{
 				$page_data['MESSAGE'] = $message;
 				$event['page_data'] = $page_data;
 			}
 		}
-		
+
 		$this->template->assign_vars(array(
 			'CODEBOX_PLUS_IN_POSTING'				=> true,
 		));
     }
-	
+
 	/*
 	* Event: core.viewtopic_post_rowset_data (viewtopic.php)
 	*/
@@ -147,7 +147,7 @@ class main_listener implements EventSubscriberInterface
 							},
 							$post_text);
 			//$post_text = preg_replace("#\[codebox=(.*?) file=(.*?):$bbcode_uid\](.*?)\[/codebox:$bbcode_uid\]#msie", "\$this->codebox_template('\$3', '\$1', '\$2', \$post_id, ++\$part)", $post_text);
-			
+
 			if (isset($rowset_data['post_text']) && $part > 0)
 			{
 				$rowset_data['post_text'] = $post_text;
@@ -155,7 +155,7 @@ class main_listener implements EventSubscriberInterface
 			}
 		}
 	}
-	
+
 	/*
 	* Event: core.modify_submit_post_data (includes/functions_posting.php)
 	* Use: $this->codebox_clean_code()
@@ -182,7 +182,7 @@ class main_listener implements EventSubscriberInterface
 			$event['data'] = $data;
 		}
     }
-	
+
 	/*
 	* Use: $this->codebox_parse_code(), $this->codebox_decode_code()
 	* Generate text for display
@@ -193,26 +193,27 @@ class main_listener implements EventSubscriberInterface
 		{
 			return '';
 		}
-		
+
 		if (strlen($file) == 0)
 		{
 			$file = $this->user->lang['CODEBOX_PLUS_DEFAULT_FILENAME'] . 'txt';
 		}
-		
+
 		$re = '<div class="codebox_plus_wrap"><div class="codebox_plus_header">';
 		$re .= '<strong>' . $this->user->lang['CODEBOX_PLUS_CODE'] . ': </strong>';
 		$re .= '<a href="#" onclick="codebox_plus_select(this, 1); return false;">[' . $this->user->lang['SELECT_ALL_CODE'] . ']</a>';
 		$re .= '&nbsp;<a href="#" onclick="codebox_plus_toggle(this, 1); return false;">[' . $this->user->lang['CODEBOX_PLUS_EXPAND'] . '/' . $this->user->lang['CODEBOX_PLUS_COLLAPSE'] . ']</a>';
-		
+
 		if ($id != 0 && $this->download_enabled && $lang != 'NULL')
 		{
 			$re .= '&nbsp;<a href="' . $this->helper->route('o0johntam0o_codeboxplus_download_controller', array('id' => $id, 'part' => $part)) . '" onclick="window.open(this.href); return false;">';
 			$re .= '[' . $this->user->lang['CODEBOX_PLUS_DOWNLOAD'] . ']</a> ' . '('. $file . ')';
 		}
-		
+
 		$re .= '</div>';
-		$re .= '<div><div style="display: ' . (($lang != 'NULL' && !$this->expanded) ? 'none' : 'inline') . ';">';
-		
+		$re .= '<div><div style="display: ' . (($lang != 'NULL' && !$this->expanded) ? 'none' : 'block') . '; height:auto; max-height: 250px; overflow:auto;">';
+
+
 		if ($lang != 'NULL')
 		{
 			$re .= $this->codebox_parse_code($this->codebox_decode_code($code), $lang);
@@ -221,13 +222,13 @@ class main_listener implements EventSubscriberInterface
 		{
 			$re .= $this->user->lang['CODEBOX_PLUS_NO_PREVIEW'];
 		}
-		
+
 		$re .= '</div></div>';
 		$re .= '<div class="codebox_plus_footer">' . $this->user->lang['CODEBOX_PLUS_GESHI'] . ' &copy; ' . $this->user->lang['CODEBOX_PLUS_TITLE'] . '</div></div>';
-		
+
 		return $re;
 	}
-	
+
 	/*
 	* Syntax highlighter
 	*/
@@ -246,24 +247,24 @@ class main_listener implements EventSubscriberInterface
 		{
 			$code = substr($code, 0, -1);
 		}
-		
+
 		if ($this->syntax_highlighting_enabled)
 		{
 			// GeSHi
 			$geshi = new \o0johntam0o\codeboxplus\includes\geshi\geshi();
 			$geshi->GeSHi($code, $lang);
 			$geshi->set_header_type(GESHI_HEADER_DIV);
-			$geshi->enable_line_numbers(GESHI_NORMAL_LINE_NUMBERS);
+			$geshi->enable_line_numbers(GESHI_NO_LINE_NUMBERS);
 			$geshi->enable_keyword_links(false);
 			$geshi->set_line_style('margin-left:20px;', false);
 			$geshi->set_code_style('border-bottom: dotted 1px #cccccc;', false);
-			$geshi->set_line_ending("\n");
+			//$geshi->set_line_ending("\n");
 			$code = str_replace("\n", "", $geshi->parse_code());
 		}
-		
+
 		return $code;
 	}
-	
+
 	/*
 	* Decode some special characters
 	*/
@@ -273,14 +274,14 @@ class main_listener implements EventSubscriberInterface
 		{
 			return $code;
 		}
-		
+
 		$str_from = array('&lt;', '&gt;', '&#91;', '&#93;', '&#40;', '&#41;', '&#46;', '&#58;', '&#058;', '&#39;', '&#039;', '&quot;', '&amp;');
 		$str_to = array('<', '>', '[', ']', '(', ')', '.', ':', ':', "'", "'", '"', '&');
 		$code = str_replace($str_from, $str_to, $code);
-		
+
 		return $code;
 	}
-	
+
 	/*
 	* Remove BBCodes UID & Smilies & Emails
 	*/
@@ -290,7 +291,7 @@ class main_listener implements EventSubscriberInterface
 		{
 			return $code;
 		}
-		
+
 		// Email
 		$code = preg_replace('#<!-- e --><a href=\\\\"mailto:(?:.*?)\\\\">(.*?)</a><!-- e -->#msi', '$1', $code);
 		// Smilies
@@ -305,7 +306,7 @@ class main_listener implements EventSubscriberInterface
 		$code = str_replace('\\"', '&quot;', $code);
 		$code = str_replace('&nbsp;', ' ', $code);
 		$code = preg_replace('#<(.*?)>#msi', '', $code);
-		
+
 		return $code;
 	}
 }

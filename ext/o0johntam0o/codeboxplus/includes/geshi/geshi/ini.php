@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * --------
  * Author: deguix (cevo_deguix@yahoo.com.br)
  * Copyright: (c) 2005 deguix
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2005/03/27
  *
  * INI language file for GeSHi.
@@ -52,10 +52,11 @@ if (!defined('IN_PHPBB'))
 
 $language_data = array (
     'LANG_NAME' => 'INI',
-    'COMMENT_SINGLE' => array(0 => ';'),
+    'COMMENT_SINGLE' => array(),
     'COMMENT_MULTI' => array(),
+    'COMMENT_REGEXP' => array(0 => '/^\s*;.*?$/m'),
     'CASE_KEYWORDS' => GESHI_CAPS_NO_CHANGE,
-    'QUOTEMARKS' => array('"'),
+    'QUOTEMARKS' => array('"', "'"),
     'ESCAPE_CHAR' => '',
     'KEYWORDS' => array(
         ),

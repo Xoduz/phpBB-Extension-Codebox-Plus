@@ -12,7 +12,7 @@ if (!defined('IN_PHPBB'))
  * --------
  * Author: Milian Wolff (mail@milianw.de)
  * Copyright: (c) 2008 Milian Wolff
- * Release Version: 1.0.8.11
+ * Release Version: 1.0.9.1
  * Date Started: 2008/05/25
  *
  * GNU Gettext .po/.pot language file for GeSHi.
@@ -99,7 +99,7 @@ $language_data = array (
         ),
     'HIGHLIGHT_STRICT_BLOCK' => array(
         ),
-    'TAB_WIDTH' => 4,
+    'TAB_WIDTH' => 4
 );
 
 ?>
