@@ -6,6 +6,22 @@
 	font-size: 1em;
 }
 
+.codebox_plus_wrap .javascript {
+	background-color: #ffffee;
+}
+
+.codebox_plus_wrap .uox3dfn {
+	background-color: #EEFFF4;
+}
+
+.codebox_plus_wrap .cpp {
+	background-color: #EDEDED;
+}
+
+.codebox_plus_wrap .ini {
+	background-color: #EEF0FF;
+}
+
 .codebox_plus_header
 {
 	text-transform: uppercase;

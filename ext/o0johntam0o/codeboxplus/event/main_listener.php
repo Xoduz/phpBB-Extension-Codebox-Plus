@@ -256,6 +256,7 @@ class main_listener implements EventSubscriberInterface
 			$geshi->set_header_type(GESHI_HEADER_DIV);
 			$geshi->enable_line_numbers(GESHI_NO_LINE_NUMBERS);
 			$geshi->enable_keyword_links(false);
+			$geshi->set_tab_width(4);
 			$geshi->set_line_style('margin-left:20px;', false);
 			$geshi->set_code_style('border-bottom: dotted 1px #cccccc;', false);
 			//$geshi->set_line_ending("\n");
